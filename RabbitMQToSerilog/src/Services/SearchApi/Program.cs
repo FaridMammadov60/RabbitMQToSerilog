@@ -17,7 +17,7 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
         builder.RegisterModule(new AutofacModule());
     });
 
-var logger = new LoggerConfiguration()
+var logger = new LoggerConfiguration()        
                 .WriteTo.File("logs.txt")
                 .CreateLogger();
 builder.Logging.AddSerilog(logger);
@@ -33,6 +33,7 @@ builder.Services.AddEndpointsApiExplorer();
 //    });
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<MedicalIntegrationEventHandler>();
+builder.Services.AddScoped<ResponsedIntegrationEventHandler>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped(sp =>
 {
@@ -69,5 +70,6 @@ app.MapControllers();
 
 IEventBus eventBus = app.Services.GetRequiredService<IEventBus>();
 eventBus.Subscribe<MedicalIntegrationEvent, MedicalIntegrationEventHandler>();
+eventBus.Subscribe<ResponsedIntegrationEvent, ResponsedIntegrationEventHandler>();
 
 app.Run();

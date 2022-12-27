@@ -1,0 +1,46 @@
+2022-12-27 11:46:40.646 -08:00 [INF] Now listening on: https://localhost:7191
+2022-12-27 11:46:40.682 -08:00 [INF] Now listening on: http://localhost:5263
+2022-12-27 11:46:40.695 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-27 11:46:40.696 -08:00 [INF] Hosting environment: Development
+2022-12-27 11:46:40.696 -08:00 [INF] Content root path: C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\
+2022-12-27 11:46:40.994 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/swagger/index.html - -
+2022-12-27 11:46:41.429 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/swagger/index.html - - - 200 - text/html;charset=utf-8 440.3363ms
+2022-12-27 11:46:41.430 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2022-12-27 11:46:41.437 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 6.5900ms
+2022-12-27 11:46:41.549 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2022-12-27 11:46:41.589 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 39.7887ms
+2022-12-27 11:46:41.829 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/swagger/v1/swagger.json - -
+2022-12-27 11:46:41.984 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 154.5923ms
+2022-12-27 11:46:58.278 -08:00 [INF] {"Data":"1","Test":"1","Eded":1,"Zad":1,"Bol":true}
+2022-12-27 11:47:54.969 -08:00 [INF] Now listening on: https://localhost:7191
+2022-12-27 11:47:55.003 -08:00 [INF] Now listening on: http://localhost:5263
+2022-12-27 11:47:55.020 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-27 11:47:55.021 -08:00 [INF] Hosting environment: Development
+2022-12-27 11:47:55.021 -08:00 [INF] Content root path: C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\
+2022-12-27 11:47:55.397 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/swagger/index.html - -
+2022-12-27 11:47:55.812 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2022-12-27 11:47:55.815 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/swagger/index.html - - - 200 - text/html;charset=utf-8 425.4035ms
+2022-12-27 11:47:55.817 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 5.1717ms
+2022-12-27 11:47:55.913 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2022-12-27 11:47:55.941 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.2741ms
+2022-12-27 11:47:56.187 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/swagger/v1/swagger.json - -
+2022-12-27 11:47:56.368 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 180.5062ms
+2022-12-27 11:48:52.647 -08:00 [INF] Now listening on: https://localhost:7191
+2022-12-27 11:48:52.680 -08:00 [INF] Now listening on: http://localhost:5263
+2022-12-27 11:48:52.706 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-27 11:48:52.707 -08:00 [INF] Hosting environment: Development
+2022-12-27 11:48:52.708 -08:00 [INF] Content root path: C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\
+2022-12-27 11:51:56.481 -08:00 [INF] Now listening on: https://localhost:7191
+2022-12-27 11:51:56.504 -08:00 [INF] Now listening on: http://localhost:5263
+2022-12-27 11:51:56.531 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-27 11:51:56.534 -08:00 [INF] Hosting environment: Development
+2022-12-27 11:51:56.538 -08:00 [INF] Content root path: C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\
+2022-12-27 11:51:57.393 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/swagger/index.html - -
+2022-12-27 11:51:58.358 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2022-12-27 11:51:58.375 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11988 application/javascript;+charset=utf-8 14.2627ms
+2022-12-27 11:51:58.404 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/swagger/index.html - - - 200 - text/html;charset=utf-8 1019.0480ms
+2022-12-27 11:51:58.454 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2022-12-27 11:51:58.518 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 64.1477ms
+2022-12-27 11:51:58.714 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7191/swagger/v1/swagger.json - -
+2022-12-27 11:51:58.915 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7191/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 201.1114ms
+2022-12-27 11:52:44.652 -08:00 [INF] {"Data":"2","Test":"2","Eded":2,"Zad":2,"Bol":true}

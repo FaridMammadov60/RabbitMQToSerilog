@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchApi", "src\Services\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApi", "src\Services\TestApi\TestApi.csproj", "{379278DD-698D-4A7C-BFA5-5C56840AFD1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HavaProqnozu", "src\Services\HavaProqnozu\HavaProqnozu.csproj", "{E5B703E6-280B-451B-8A93-2CBAB57F151C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{379278DD-698D-4A7C-BFA5-5C56840AFD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{379278DD-698D-4A7C-BFA5-5C56840AFD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{379278DD-698D-4A7C-BFA5-5C56840AFD1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5B703E6-280B-451B-8A93-2CBAB57F151C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B703E6-280B-451B-8A93-2CBAB57F151C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B703E6-280B-451B-8A93-2CBAB57F151C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B703E6-280B-451B-8A93-2CBAB57F151C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{E63E6959-3724-4275-9DDB-5D21742DC5A5} = {55ACFF78-A33C-47B4-97C8-7388F55C0FDB}
 		{BF6A526B-2410-408C-8810-8472ECBBCEA7} = {278F0A72-E5D8-4D32-9EAF-4AB92173C7FD}
 		{379278DD-698D-4A7C-BFA5-5C56840AFD1A} = {278F0A72-E5D8-4D32-9EAF-4AB92173C7FD}
+		{E5B703E6-280B-451B-8A93-2CBAB57F151C} = {278F0A72-E5D8-4D32-9EAF-4AB92173C7FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {804EEB67-094B-43EB-A4E5-7261C9937A5B}
