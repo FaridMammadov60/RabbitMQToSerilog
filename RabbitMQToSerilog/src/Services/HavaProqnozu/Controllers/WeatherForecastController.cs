@@ -7,19 +7,17 @@ namespace HavaProqnozu.Controllers
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
-    {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-        private readonly ILogger<WeatherForecastController> _logger;
+    {        
+               
         private readonly IEventBus _eventBus;
         public WeatherForecastController(IEventBus eventBus, ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
+        {           
             _eventBus = eventBus;
         }
+
+        private static readonly string[] Summaries = new[]
+        {
+        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"};
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
@@ -32,8 +30,8 @@ namespace HavaProqnozu.Controllers
             })
             .ToArray();
 
-            string json = JsonSerializer.Serialize( data, (JsonSerializerOptions)null);
-            _eventBus.Publish(new HavaIntegrationEvent { JsonData = json });
+            string json = JsonSerializer.Serialize( new { Data = data }, (JsonSerializerOptions)null);
+            _eventBus.Publish(new ResponsedntegrationEvent { JsonData = json });
 
             return data;
         }

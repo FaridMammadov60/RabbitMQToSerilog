@@ -2,7 +2,7 @@
 
 namespace HavaProqnozu
 {
-    public class HavaIntegrationEvent:IntegrationEvent
+    public class ResponsedntegrationEvent:IntegrationEvent
     {
         public string JsonData { get; set; }
     }

@@ -18,8 +18,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSwaggerGen();
-
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped(sp =>
 {
@@ -27,7 +25,7 @@ builder.Services.AddScoped(sp =>
     {
         ConnectionRetryCount = 5,
         EventNameSuffix = "IntegrationEvent",
-        SubscriberClientAppName = "Hava",
+        SubscriberClientAppName = "HavaedProqnozu",
         EventBusType = EventBusType.RabbitMQ,
         //Connection = new ConnectionFactory()
         //{
