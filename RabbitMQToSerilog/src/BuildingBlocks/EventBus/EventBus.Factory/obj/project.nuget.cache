@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qCoB4kAXHrLRtihmp33rYTrTKFFG55Ar9Rd0AEVftSDl965nXKQ3zVRjbg0TlHCKTjXAHufuomj6CZAg6B55Bw==",
+  "dgSpecHash": "KrKP7k6hQlUuwrrC3QfcMXqNJFXfJeNHpNESkXxSYKd/Idg1q/gi/Yo3cxYW/oyYgK8OAxjEfLJmmP+WSt23ig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj",
+  "projectFilePath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\farid\\.nuget\\packages\\aspose.pdf\\22.11.0\\aspose.pdf.22.11.0.nupkg.sha512",
     "C:\\Users\\farid\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

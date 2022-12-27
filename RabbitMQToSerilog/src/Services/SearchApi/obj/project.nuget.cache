@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wpXxwjpPZ6S9Vy4JkmzNcObNY0Obehd3iJdT76Nbhwu3AdeW/W2rhDsH9eepTHNaBaB2v5OqOxCegdqqLmfQNw==",
+  "dgSpecHash": "e6+9FcHoq2D40jTU+Zs2y+08qyTZL4BBsdYXVYRcUC4dbSEMBBTuAFUKYoBAWaFKfOCP6csoLvyXGkygXwflmA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj",
+  "projectFilePath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\farid\\.nuget\\packages\\aspose.pdf\\22.11.0\\aspose.pdf.22.11.0.nupkg.sha512",
     "C:\\Users\\farid\\.nuget\\packages\\autofac\\6.5.0\\autofac.6.5.0.nupkg.sha512",

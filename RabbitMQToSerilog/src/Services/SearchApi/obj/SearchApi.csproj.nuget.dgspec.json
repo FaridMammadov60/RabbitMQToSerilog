@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj": {}
+    "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj": {
+    "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj",
+        "projectUniqueName": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj",
         "projectName": "EventBus.Base",
-        "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj",
+        "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj",
         "packagesPath": "C:\\Users\\farid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\obj\\",
+        "outputPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj": {
+    "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj",
+        "projectUniqueName": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj",
         "projectName": "EventBus.Factory",
-        "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj",
+        "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj",
         "packagesPath": "C:\\Users\\farid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\obj\\",
+        "outputPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -103,11 +103,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj": {
-                "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj"
+              "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj": {
+                "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj"
               },
-              "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj": {
-                "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj"
+              "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj": {
+                "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj"
               }
             }
           }
@@ -141,14 +141,14 @@
         }
       }
     },
-    "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj": {
+    "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj",
+        "projectUniqueName": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj",
         "projectName": "EventBus.RabbitMQ",
-        "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj",
+        "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj",
         "packagesPath": "C:\\Users\\farid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\obj\\",
+        "outputPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -170,8 +170,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj": {
-                "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj"
+              "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj": {
+                "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj"
               }
             }
           }
@@ -223,14 +223,14 @@
         }
       }
     },
-    "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj": {
+    "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj",
+        "projectUniqueName": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj",
         "projectName": "SearchApi",
-        "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj",
+        "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj",
         "packagesPath": "C:\\Users\\farid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\Services\\SearchApi\\obj\\",
+        "outputPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\Services\\SearchApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -252,11 +252,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj": {
-                "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj"
+              "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj": {
+                "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Base\\EventBus.Base.csproj"
               },
-              "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj": {
-                "projectPath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj"
+              "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj": {
+                "projectPath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj"
               }
             }
           }

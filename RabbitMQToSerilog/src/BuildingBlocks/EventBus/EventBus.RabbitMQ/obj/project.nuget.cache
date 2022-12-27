@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pIPyEbxzkCfzxUZwcrPo0CEWbyNCidyNcEj8vT2ieRomlcQuNKJGdIxr60IJA0LoEGlSW/Fj27e0wmViJhN+GA==",
+  "dgSpecHash": "G64yOcOchRh8EOy/K87KZRaeQ2hkQ4KHOVI08xBb331N7E1Ty8FwRg1AS+yNFKJbthG5qFrH+2GI7mI2OPyoCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\farid\\Desktop\\New folder (3)\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj",
+  "projectFilePath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\farid\\.nuget\\packages\\aspose.pdf\\22.11.0\\aspose.pdf.22.11.0.nupkg.sha512",
     "C:\\Users\\farid\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
