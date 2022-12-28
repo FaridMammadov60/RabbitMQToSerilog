@@ -15,8 +15,8 @@ namespace SearchApi.IntegrationEvents.EventHandlers
 
         public Task Handle(ResponsedIntegrationEvent @event)
         {
-            Log.Information($"{@event.JsonData}");
-            _logger.LogInformation(@event.JsonData);
+            //Log.Information($"{@event.JsonData}");
+            _logger.LogWarning(@event.JsonData);
 
             return Task.CompletedTask;
         }

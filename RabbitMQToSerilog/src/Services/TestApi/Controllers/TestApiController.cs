@@ -10,31 +10,25 @@ namespace TestApi.Controllers
     [ApiController]
     public class TestApiController : ControllerBase
     {
+        private readonly ILogger<ResponsedIntegrationEvent> _logger;
 
+        
 
-        private readonly IEventBus _eventBus;
-
-        public TestApiController(IEventBus eventBus)
+        public TestApiController(ILogger<ResponsedIntegrationEvent> logger)
         {
-            _eventBus = eventBus;
+            _logger= logger;
         }
 
 
-        [HttpPost]
-        public async Task<IActionResult> GetAll(int id, string data)
+        [HttpPost]       
+        public async Task<IActionResult> TestPost()
         {
-            _eventBus.Publish(new MedicalIntegrationEvent { Name = data, Id = id });
-           
-            return Ok("Ok");
-        }
+            string data1 = "Test";
+            string data2 = "Test";
+            string json = JsonSerializer.Serialize(new { Data = data1, Test = data2 }, (JsonSerializerOptions)null);
 
-
-        [HttpPost("tester")]
-        public async Task<IActionResult> TestPost(string data1, string data2, double eded, long zad, bool exist)
-        {
-            string json = JsonSerializer.Serialize(new { Data = data1, Test = data2, Eded = eded, Zad = zad, Bol = exist }, (JsonSerializerOptions)null);
-
-            _eventBus.Publish(new ResponsedIntegrationEvent { JsonData = json });
+            _logger.LogWarning(json);
+            
 
             return Ok(json);
         }

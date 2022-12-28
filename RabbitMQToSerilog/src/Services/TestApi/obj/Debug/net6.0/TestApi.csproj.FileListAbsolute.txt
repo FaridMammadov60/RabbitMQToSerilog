@@ -58,3 +58,12 @@ C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\T
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\EventBus.RabbitMQ.dll
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\EventBus.Factory.pdb
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\EventBus.RabbitMQ.pdb
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.Http.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.RabbitMQ.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.RabbitMq.Client.dll

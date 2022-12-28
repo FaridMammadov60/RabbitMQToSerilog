@@ -17,7 +17,8 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
         builder.RegisterModule(new AutofacModule());
     });
 
-var logger = new LoggerConfiguration()        
+var logger = new LoggerConfiguration()    
+                .MinimumLevel.Warning()
                 .WriteTo.File("logs.txt")
                 .CreateLogger();
 builder.Logging.AddSerilog(logger);

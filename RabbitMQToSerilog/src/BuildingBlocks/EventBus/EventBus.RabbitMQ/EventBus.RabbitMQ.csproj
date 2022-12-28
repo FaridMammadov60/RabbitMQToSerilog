@@ -9,7 +9,13 @@
 		<PackageReference Include="Aspose.PDF" Version="22.11.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 		<PackageReference Include="Polly" Version="7.2.3" />
-		<PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.4.0" />
+		<PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+		<PackageReference Include="Serilog.Sinks.Http" Version="8.0.0" />
+		<PackageReference Include="Serilog.Sinks.RabbitMQ" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.RabbitMq.Client" Version="3.271.1" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\EventBus.Base\EventBus.Base.csproj" />

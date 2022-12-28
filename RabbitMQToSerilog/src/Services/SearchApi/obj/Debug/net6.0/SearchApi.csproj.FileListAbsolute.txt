@@ -140,3 +140,6 @@ C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\S
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\obj\Debug\net6.0\SearchApi.pdb
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\obj\Debug\net6.0\SearchApi.genruntimeconfig.cache
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\obj\Debug\net6.0\ref\SearchApi.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\bin\Debug\net6.0\Serilog.Sinks.RabbitMQ.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\bin\Debug\net6.0\Serilog.Sinks.RabbitMq.Client.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\SearchApi\bin\Debug\net6.0\Serilog.Sinks.Http.dll

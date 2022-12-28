@@ -257,6 +257,19 @@
           }
         }
       },
+      "Microsoft.Extensions.ObjectPool/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Options/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -366,20 +379,19 @@
           }
         }
       },
-      "RabbitMQ.Client/6.4.0": {
+      "RabbitMQ.Client/6.0.0": {
         "type": "package",
         "dependencies": {
-          "System.Memory": "4.5.4",
-          "System.Threading.Channels": "4.7.1"
+          "System.Memory": "4.5.4"
         },
         "compile": {
           "lib/netstandard2.0/RabbitMQ.Client.dll": {
-            "related": ".xml"
+            "related": ".pdb;.xml"
           }
         },
         "runtime": {
           "lib/netstandard2.0/RabbitMQ.Client.dll": {
-            "related": ".xml"
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -423,7 +435,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Serilog.Extensions.Hosting/5.0.0": {
+      "Serilog.Extensions.Hosting/5.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.8",
@@ -581,6 +593,23 @@
           }
         }
       },
+      "Serilog.Sinks.Http/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0",
+          "Serilog.Sinks.File": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/Serilog.Sinks.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Serilog.Sinks.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Serilog.Sinks.PeriodicBatching/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -597,6 +626,34 @@
           "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "Serilog.Sinks.RabbitMQ/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "RabbitMQ.Client": "6.0.0",
+          "Serilog": "2.8.0",
+          "Serilog.Sinks.PeriodicBatching": "2.1.1"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Serilog.Sinks.RabbitMQ.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Serilog.Sinks.RabbitMQ.dll": {}
+        }
+      },
+      "Serilog.Sinks.RabbitMq.Client/3.271.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.ObjectPool": "3.0.0",
+          "RabbitMQ.Client": "5.1.0",
+          "Serilog": "2.7.1"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Serilog.Sinks.RabbitMq.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Serilog.Sinks.RabbitMq.Client.dll": {}
         }
       },
       "Swashbuckle.AspNetCore/6.2.3": {
@@ -1144,19 +1201,6 @@
           "lib/netstandard1.3/System.Threading.dll": {}
         }
       },
-      "System.Threading.Channels/4.7.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Threading.Channels.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "System.Threading.Tasks/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -1210,7 +1254,14 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "RabbitMQ.Client": "6.0.0",
+          "Serilog.Extensions.Hosting": "5.0.1",
+          "Serilog.Settings.Configuration": "3.4.0",
+          "Serilog.Sinks.File": "5.0.0",
+          "Serilog.Sinks.Http": "8.0.0",
+          "Serilog.Sinks.RabbitMQ": "6.0.0",
+          "Serilog.Sinks.RabbitMq.Client": "3.271.1"
         },
         "compile": {
           "bin/placeholder/EventBus.Base.dll": {}
@@ -1224,7 +1275,14 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "EventBus.Base": "1.0.0",
-          "EventBus.RabbitMQ": "1.0.0"
+          "EventBus.RabbitMQ": "1.0.0",
+          "RabbitMQ.Client": "6.0.0",
+          "Serilog.Extensions.Hosting": "5.0.1",
+          "Serilog.Settings.Configuration": "3.4.0",
+          "Serilog.Sinks.File": "5.0.0",
+          "Serilog.Sinks.Http": "8.0.0",
+          "Serilog.Sinks.RabbitMQ": "6.0.0",
+          "Serilog.Sinks.RabbitMq.Client": "3.271.1"
         },
         "compile": {
           "bin/placeholder/EventBus.Factory.dll": {}
@@ -1241,7 +1299,13 @@
           "EventBus.Base": "1.0.0",
           "Newtonsoft.Json": "13.0.2",
           "Polly": "7.2.3",
-          "RabbitMQ.Client": "6.4.0"
+          "RabbitMQ.Client": "6.0.0",
+          "Serilog.Extensions.Hosting": "5.0.1",
+          "Serilog.Settings.Configuration": "3.4.0",
+          "Serilog.Sinks.File": "5.0.0",
+          "Serilog.Sinks.Http": "8.0.0",
+          "Serilog.Sinks.RabbitMQ": "6.0.0",
+          "Serilog.Sinks.RabbitMq.Client": "3.271.1"
         },
         "compile": {
           "bin/placeholder/EventBus.RabbitMQ.dll": {}
@@ -1623,6 +1687,19 @@
         "version.txt"
       ]
     },
+    "Microsoft.Extensions.ObjectPool/3.0.0": {
+      "sha512": "WSv1AxLExyvROaFO+2TmVzH63rYvRemIKO4CkTYBHm6bXalXAmUGTqx9WqImjCBKB6ze25+1aHvW+mt8urAM/g==",
+      "type": "package",
+      "path": "microsoft.extensions.objectpool/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.xml",
+        "microsoft.extensions.objectpool.3.0.0.nupkg.sha512",
+        "microsoft.extensions.objectpool.nuspec"
+      ]
+    },
     "Microsoft.Extensions.Options/5.0.0": {
       "sha512": "CBvR92TCJ5uBIdd9/HzDSrxYak+0W/3+yxrNg8Qm6Bmrkh5L+nu6m3WeazQehcZ5q1/6dDA7J5YdQjim0165zg==",
       "type": "package",
@@ -1796,19 +1873,22 @@
         "polly.nuspec"
       ]
     },
-    "RabbitMQ.Client/6.4.0": {
-      "sha512": "1znR1gGU+xYVSpO5z8nQolcUKA/yydnxQn7Ug9+RUXxTSLMm/eE58VKGwahPBjELXvDnX0k/kBrAitFLRjx9LA==",
+    "RabbitMQ.Client/6.0.0": {
+      "sha512": "8e7KK44Fai72F452GF8KxUAW5t+ik3rUcalpQaxQNv6DxZyQTgVioWfyYSGYF6qpUqDdy7ZmvD3Zgkm7pKNR9w==",
       "type": "package",
-      "path": "rabbitmq.client/6.4.0",
+      "path": "rabbitmq.client/6.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "LICENSE",
         "icon.png",
         "lib/net461/RabbitMQ.Client.dll",
+        "lib/net461/RabbitMQ.Client.pdb",
         "lib/net461/RabbitMQ.Client.xml",
         "lib/netstandard2.0/RabbitMQ.Client.dll",
+        "lib/netstandard2.0/RabbitMQ.Client.pdb",
         "lib/netstandard2.0/RabbitMQ.Client.xml",
-        "rabbitmq.client.6.4.0.nupkg.sha512",
+        "rabbitmq.client.6.0.0.nupkg.sha512",
         "rabbitmq.client.nuspec"
       ]
     },
@@ -1856,10 +1936,10 @@
         "serilog.aspnetcore.nuspec"
       ]
     },
-    "Serilog.Extensions.Hosting/5.0.0": {
-      "sha512": "Dea1bCvizIhPWwv/a9JdQRSrOyqE0L8XCtvq7BkBeM/cqlvZRqPKPyo7XqvrC80LG6Owb8fw1UiGeifOqM0cIw==",
+    "Serilog.Extensions.Hosting/5.0.1": {
+      "sha512": "o0VUyt3npAqOJaZ6CiWLFeLYs3CYJwfcAqaUqprzsmj7qYIvorcn8cZLVR8AQX6vzX7gee2bD0sQeA17iO2/Aw==",
       "type": "package",
-      "path": "serilog.extensions.hosting/5.0.0",
+      "path": "serilog.extensions.hosting/5.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1868,7 +1948,7 @@
         "lib/netstandard2.0/Serilog.Extensions.Hosting.xml",
         "lib/netstandard2.1/Serilog.Extensions.Hosting.dll",
         "lib/netstandard2.1/Serilog.Extensions.Hosting.xml",
-        "serilog.extensions.hosting.5.0.0.nupkg.sha512",
+        "serilog.extensions.hosting.5.0.1.nupkg.sha512",
         "serilog.extensions.hosting.nuspec"
       ]
     },
@@ -2022,6 +2102,27 @@
         "serilog.sinks.file.nuspec"
       ]
     },
+    "Serilog.Sinks.Http/8.0.0": {
+      "sha512": "eHyl2/93Roymf2eudPl/6Eeu2GQ93Ucy4GM1UPF0jyd7CIW8r+Bk5ohdbjjyjB9TQSpP2ovOuj6ltf9DjoWHtg==",
+      "type": "package",
+      "path": "serilog.sinks.http/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net45/Serilog.Sinks.Http.dll",
+        "lib/net45/Serilog.Sinks.Http.xml",
+        "lib/net461/Serilog.Sinks.Http.dll",
+        "lib/net461/Serilog.Sinks.Http.xml",
+        "lib/netstandard2.0/Serilog.Sinks.Http.dll",
+        "lib/netstandard2.0/Serilog.Sinks.Http.xml",
+        "lib/netstandard2.1/Serilog.Sinks.Http.dll",
+        "lib/netstandard2.1/Serilog.Sinks.Http.xml",
+        "serilog-sink-nuget.png",
+        "serilog.sinks.http.8.0.0.nupkg.sha512",
+        "serilog.sinks.http.nuspec"
+      ]
+    },
     "Serilog.Sinks.PeriodicBatching/2.1.1": {
       "sha512": "L1iZtcEzQdEIYCPvhYJYB2RofPg+i1NhHJfS+DpXLyLSMS6OXebqaI1fxWhmJRIjD9D9BuXi23FkZTQDiP7cHw==",
       "type": "package",
@@ -2037,6 +2138,32 @@
         "lib/netstandard1.2/Serilog.Sinks.PeriodicBatching.xml",
         "serilog.sinks.periodicbatching.2.1.1.nupkg.sha512",
         "serilog.sinks.periodicbatching.nuspec"
+      ]
+    },
+    "Serilog.Sinks.RabbitMQ/6.0.0": {
+      "sha512": "M8SGYpfvoQ09gSxcoFHuUyeny4bMtMHopWs/y0umbx2EJlf3gEQiAQREsmBdVSXZnSYdgQh131JM6TB2eZlF+Q==",
+      "type": "package",
+      "path": "serilog.sinks.rabbitmq/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/Serilog.Sinks.RabbitMQ.dll",
+        "lib/netcoreapp2.0/Serilog.Sinks.RabbitMQ.dll",
+        "lib/netstandard2.0/Serilog.Sinks.RabbitMQ.dll",
+        "serilog.sinks.rabbitmq.6.0.0.nupkg.sha512",
+        "serilog.sinks.rabbitmq.nuspec"
+      ]
+    },
+    "Serilog.Sinks.RabbitMq.Client/3.271.1": {
+      "sha512": "U4zDrmlgoPn6WDHX910umm2ckOi2ROLL7UDsL8TaU6zRLy04mQ+xNbLwoRtFpl5epyBns5d6MoWZzIYCk4/PqA==",
+      "type": "package",
+      "path": "serilog.sinks.rabbitmq.client/3.271.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.0/Serilog.Sinks.RabbitMq.Client.dll",
+        "serilog.sinks.rabbitmq.client.3.271.1.nupkg.sha512",
+        "serilog.sinks.rabbitmq.client.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.2.3": {
@@ -3541,30 +3668,6 @@
         "system.threading.nuspec"
       ]
     },
-    "System.Threading.Channels/4.7.1": {
-      "sha512": "6akRtHK/wab3246t4p5v3HQrtQk8LboOt5T4dtpNgsp3zvDeM4/Gx8V12t0h+c/W9/enUrilk8n6EQqdQorZAA==",
-      "type": "package",
-      "path": "system.threading.channels/4.7.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Threading.Channels.dll",
-        "lib/net461/System.Threading.Channels.xml",
-        "lib/netcoreapp3.0/System.Threading.Channels.dll",
-        "lib/netcoreapp3.0/System.Threading.Channels.xml",
-        "lib/netstandard1.3/System.Threading.Channels.dll",
-        "lib/netstandard1.3/System.Threading.Channels.xml",
-        "lib/netstandard2.0/System.Threading.Channels.dll",
-        "lib/netstandard2.0/System.Threading.Channels.xml",
-        "system.threading.channels.4.7.1.nupkg.sha512",
-        "system.threading.channels.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.Threading.Tasks/4.0.11": {
       "sha512": "k1S4Gc6IGwtHGT8188RSeGaX86Qw/wnrgNLshJvsdNUOPP9etMmo8S07c+UlOAx4K/xLuN9ivA1bD0LVurtIxQ==",
       "type": "package",
@@ -3733,10 +3836,15 @@
       "Autofac.Extensions.DependencyInjection >= 8.0.0",
       "EventBus.Base >= 1.0.0",
       "EventBus.Factory >= 1.0.0",
+      "RabbitMQ.Client >= 6.0.0",
       "Serilog.AspNetCore >= 6.0.0",
+      "Serilog.Extensions.Hosting >= 5.0.1",
       "Serilog.Settings.Configuration >= 3.4.0",
       "Serilog.Sinks.Elasticsearch >= 8.4.1",
       "Serilog.Sinks.File >= 5.0.0",
+      "Serilog.Sinks.Http >= 8.0.0",
+      "Serilog.Sinks.RabbitMQ >= 6.0.0",
+      "Serilog.Sinks.RabbitMq.Client >= 3.271.1",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -3800,9 +3908,17 @@
             "target": "Package",
             "version": "[8.0.0, )"
           },
+          "RabbitMQ.Client": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
           "Serilog.AspNetCore": {
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "Serilog.Extensions.Hosting": {
+            "target": "Package",
+            "version": "[5.0.1, )"
           },
           "Serilog.Settings.Configuration": {
             "target": "Package",
@@ -3815,6 +3931,18 @@
           "Serilog.Sinks.File": {
             "target": "Package",
             "version": "[5.0.0, )"
+          },
+          "Serilog.Sinks.Http": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
+          "Serilog.Sinks.RabbitMQ": {
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
+          "Serilog.Sinks.RabbitMq.Client": {
+            "target": "Package",
+            "version": "[3.271.1, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

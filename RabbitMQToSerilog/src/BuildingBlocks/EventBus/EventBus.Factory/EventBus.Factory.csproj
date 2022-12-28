@@ -5,6 +5,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="6.0.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="5.0.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.4.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.Http" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.RabbitMQ" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.RabbitMq.Client" Version="3.271.1" />
+  </ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\EventBus.Base\EventBus.Base.csproj" />
 		<ProjectReference Include="..\EventBus.RabbitMQ\EventBus.RabbitMQ.csproj" />

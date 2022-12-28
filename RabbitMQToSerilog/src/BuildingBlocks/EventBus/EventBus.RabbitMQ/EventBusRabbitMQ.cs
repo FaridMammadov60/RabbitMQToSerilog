@@ -35,8 +35,12 @@ namespace EventBus.RabbitMq
 
                 //connectionFactory = JsonConvert.DeserializeObject<ConnectionFactory>(connJson);    //-- Newtonsoft erroru qaytarir static yazdim
                 connectionFactory = new ConnectionFactory()
-                {
-                    HostName = "rabbitmq"
+                {                   
+                        HostName = "127.0.0.1",
+                        Port = 15672,
+                        UserName = "guest",
+                        Password = "guest"                   
+
                 };
             }
             else
