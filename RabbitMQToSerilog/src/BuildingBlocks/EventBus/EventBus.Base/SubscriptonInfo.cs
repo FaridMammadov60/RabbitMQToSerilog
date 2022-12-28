@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EventBus.Base
+﻿namespace EventBus.Base
 {
     public class SubscriptonInfo
     {

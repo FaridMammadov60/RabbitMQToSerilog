@@ -1,9 +1,5 @@
 ﻿using EventBus.Base.Abstraction;
 using EventBus.Base.Event;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace EventBus.Base.SubManagers
 {
@@ -24,7 +20,7 @@ namespace EventBus.Base.SubManagers
 
         public bool IsEmpty => !_handlers.Keys.Any();
         public void Clear() => _handlers.Clear();
-     
+
 
         public void AddSubscription<T, TH>() where T : IntegrationEvent where TH : IIntegrationEventHandler<T>
         {
@@ -60,7 +56,7 @@ namespace EventBus.Base.SubManagers
         }
 
         public Type GetEventTypeByName(string eventName) => _eventTypes.SingleOrDefault(t => t.Name == eventName);
-        
+
 
         public IEnumerable<SubscriptonInfo> GetHandlersForEvent<T>() where T : IntegrationEvent
         {
@@ -69,10 +65,10 @@ namespace EventBus.Base.SubManagers
         }
 
         public IEnumerable<SubscriptonInfo> GetHandlersForEvent(string eventName) => _handlers[eventName];
-        
 
 
-        private SubscriptonInfo FindSubscriptionToRemove<T, TH>() where T: IntegrationEvent where TH : IIntegrationEventHandler<T>
+
+        private SubscriptonInfo FindSubscriptionToRemove<T, TH>() where T : IntegrationEvent where TH : IIntegrationEventHandler<T>
         {
             var eventName = GetEventKey<T>();
             return FindSubscriptionToRemove(eventName, typeof(TH));
@@ -96,7 +92,7 @@ namespace EventBus.Base.SubManagers
         }
 
         public bool HasSubscriptionsForEvent(string eventName) => _handlers.ContainsKey(eventName);
-      
+
 
         public void RemoveSubscription<T, TH>() where T : IntegrationEvent where TH : IIntegrationEventHandler<T>
         {

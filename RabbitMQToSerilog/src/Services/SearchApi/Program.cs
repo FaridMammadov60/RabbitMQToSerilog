@@ -3,7 +3,6 @@ using Autofac.Extensions.DependencyInjection;
 using EventBus.Base;
 using EventBus.Base.Abstraction;
 using EventBus.Factory;
-using RabbitMQ.Client;
 using SearchApi.AutoFac;
 using SearchApi.IntegrationEvents.Event;
 using SearchApi.IntegrationEvents.EventHandlers;
@@ -17,7 +16,7 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
         builder.RegisterModule(new AutofacModule());
     });
 
-var logger = new LoggerConfiguration()    
+var logger = new LoggerConfiguration()
                 .MinimumLevel.Warning()
                 .WriteTo.File("logs.txt")
                 .CreateLogger();

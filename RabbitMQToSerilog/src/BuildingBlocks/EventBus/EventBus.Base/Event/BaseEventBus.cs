@@ -2,11 +2,7 @@
 using EventBus.Base.SubManagers;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace EventBus.Base.Event
 {
@@ -65,6 +61,9 @@ namespace EventBus.Base.Event
 
                         var eventType = SubManager.GetEventTypeByName($"{EventBusConfig.EventNamePrefix}{eventName}{EventBusConfig.EventNameSuffix}");
                         var integrationEvent = JsonConvert.DeserializeObject(message, eventType);
+
+                        PropertyInfo propertyInfo = integrationEvent.GetType().GetProperty("JsonData");
+                        propertyInfo.SetValue(integrationEvent, Convert.ChangeType(message, propertyInfo.PropertyType), null);
 
                         var concreteType = typeof(IIntegrationEventHandler<>).MakeGenericType(eventType);
                         await (Task)concreteType.GetMethod("Handle").Invoke(handler, new object[] { integrationEvent });

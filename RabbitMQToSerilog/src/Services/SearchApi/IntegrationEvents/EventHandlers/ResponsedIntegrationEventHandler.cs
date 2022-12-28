@@ -1,6 +1,5 @@
 ﻿using EventBus.Base.Abstraction;
 using SearchApi.IntegrationEvents.Event;
-using Serilog;
 
 namespace SearchApi.IntegrationEvents.EventHandlers
 {

@@ -1,13 +1,10 @@
 ﻿using EventBus.Base;
-using EventBus.Base.Abstraction;
 using EventBus.Base.Event;
 using Newtonsoft.Json;
 using Polly;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Exceptions;
-using System;
-using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
 
@@ -35,11 +32,11 @@ namespace EventBus.RabbitMq
 
                 //connectionFactory = JsonConvert.DeserializeObject<ConnectionFactory>(connJson);    //-- Newtonsoft erroru qaytarir static yazdim
                 connectionFactory = new ConnectionFactory()
-                {                   
-                        HostName = "127.0.0.1",
-                        Port = 15672,
-                        UserName = "guest",
-                        Password = "guest"                   
+                {
+                    HostName = "127.0.0.1",
+                    Port = 15672,
+                    UserName = "guest",
+                    Password = "guest"
 
                 };
             }
@@ -71,7 +68,7 @@ namespace EventBus.RabbitMq
 
             if (SubManager.IsEmpty)
             {
-                consumerChannel.Close(); 
+                consumerChannel.Close();
             }
         }
 
@@ -195,7 +192,7 @@ namespace EventBus.RabbitMq
             {
                 Console.WriteLine(ex.Message);
                 //logging
-               
+
             }
 
             consumerChannel.BasicAck(eventArgs.DeliveryTag, multiple: false);

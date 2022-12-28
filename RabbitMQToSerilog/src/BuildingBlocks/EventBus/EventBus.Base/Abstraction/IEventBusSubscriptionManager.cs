@@ -1,6 +1,4 @@
 ﻿using EventBus.Base.Event;
-using System;
-using System.Collections.Generic;
 
 namespace EventBus.Base.Abstraction
 {
@@ -10,7 +8,7 @@ namespace EventBus.Base.Abstraction
 
         event EventHandler<string> OnEventRemoved;
 
-        void AddSubscription<T, TH>()where T : IntegrationEvent where TH : IIntegrationEventHandler<T>;
+        void AddSubscription<T, TH>() where T : IntegrationEvent where TH : IIntegrationEventHandler<T>;
 
         void RemoveSubscription<T, TH>() where TH : IIntegrationEventHandler<T> where T : IntegrationEvent;
 

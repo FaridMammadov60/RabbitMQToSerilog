@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EventBus.Base
+﻿namespace EventBus.Base
 {
     public class EventBusConfig
     {
         public int ConnectionRetryCount { get; set; } = 5; // eventbusa qoshulma zamani minimum 5 defe yoxla(birinci veya 5 e qeder problem olma ehtimalina gore) 
         public string DefaultTopicName { get; set; } = "AdrenalinEventBus"; // Default Topic adi bunun altinda queueler
-        public string EventBusConnectionString { get; set; } = String.Empty; 
+        public string EventBusConnectionString { get; set; } = String.Empty;
         public string SubscriberClientAppName { get; set; } = String.Empty;
         public string EventNamePrefix { get; set; } = String.Empty;
         public string EventNameSuffix { get; set; } = "IntegrationEvent";
@@ -23,7 +19,7 @@ namespace EventBus.Base
 
     public enum EventBusType
     {
-        RabbitMQ =0,
-        AzureServiceBus =1
+        RabbitMQ = 0,
+        AzureServiceBus = 1
     }
 }

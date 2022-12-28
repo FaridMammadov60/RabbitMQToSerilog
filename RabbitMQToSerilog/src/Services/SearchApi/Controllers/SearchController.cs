@@ -1,7 +1,5 @@
 ﻿using EventBus.Base.Abstraction;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Polly;
 using SearchApi.IntegrationEvents.Event;
 
 namespace SearchApi.Controllers
@@ -11,7 +9,7 @@ namespace SearchApi.Controllers
     public class SearchController : ControllerBase
     {
         private readonly IEventBus _eventBus;
-        
+
         public SearchController(IEventBus eventBus)
         {
             _eventBus = eventBus;
@@ -19,7 +17,7 @@ namespace SearchApi.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> GetAll(int id,string data)
+        public async Task<IActionResult> GetAll(int id, string data)
         {
             _eventBus.Publish(new MedicalIntegrationEvent { Name = data, Id = id });
             return Ok("Ok");

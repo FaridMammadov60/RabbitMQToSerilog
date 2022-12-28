@@ -1,10 +1,7 @@
 ﻿using Polly;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Exceptions;
-using System;
-using System.Collections.Generic;
 using System.Net.Sockets;
-using System.Text;
 
 namespace EventBus.RabbitMq
 {
@@ -23,7 +20,7 @@ namespace EventBus.RabbitMq
             _connectionFactory = connectionFactory;
             _retryCount = retryCount;
         }
-        public bool IsConnected=> connection != null && connection.IsOpen;
+        public bool IsConnected => connection != null && connection.IsOpen;
 
         public IModel CreateModel()
         {
@@ -68,7 +65,7 @@ namespace EventBus.RabbitMq
         private void Connection_ConnectionBlocked(object sender, RabbitMQ.Client.Events.ConnectionBlockedEventArgs e)
         {
             if (!_disposed) return;
-       
+
             TryConnect();
         }
 

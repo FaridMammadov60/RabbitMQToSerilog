@@ -1,16 +1,9 @@
 using Autofac;
-using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
-using EventBus.Base;
-using EventBus.Base.Abstraction;
-using EventBus.Factory;
 using Serilog;
 using Serilog.Formatting.Json;
 using Serilog.Sinks.RabbitMQ;
 using TestApi.AutoFac;
-using TestApi.IntegrationEvents.Events;
-
-using Serilog.Sinks.RabbitMQ.Sinks.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,8 +16,9 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
 
 
 Log.Logger = new LoggerConfiguration()
-    .Enrich.FromLogContext()   
-    .WriteTo.RabbitMQ((clientConfiguration, sinkConfiguration) => {
+    .Enrich.FromLogContext()    
+    .WriteTo.RabbitMQ((clientConfiguration, sinkConfiguration) =>
+    {
         clientConfiguration.Username = "guest"; //"dev-user"
         clientConfiguration.Password = "guest"; //
         clientConfiguration.Exchange = "AdrenalinEventBus";
@@ -33,8 +27,6 @@ Log.Logger = new LoggerConfiguration()
         clientConfiguration.RouteKey = "Responsed";
         clientConfiguration.Port = 5672; //32672        
         clientConfiguration.Hostnames.Add("127.0.0.1"); //"10.168.32.20"
-
-
 
         sinkConfiguration.TextFormatter = new JsonFormatter();
     }).MinimumLevel.Warning()
