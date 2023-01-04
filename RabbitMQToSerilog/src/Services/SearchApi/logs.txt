@@ -1,2 +1,0 @@
-2022-12-28 12:23:59.203 -08:00 [WRN] {"Timestamp":"2022-12-28T12:23:45.7696958-08:00","Level":"Warning","MessageTemplate":"{\"Data\":\"Test\",\"Test\":\"Test\"}","Properties":{"SourceContext":"TestApi.IntegrationEvents.Events.ResponsedIntegrationEvent","ActionId":"89951ced-10e1-4e83-b2ce-1a356b631412","ActionName":"TestApi.Controllers.TestApiController.TestPost (TestApi)","RequestId":"0HMN925I9RJQ4:00000001","RequestPath":"/api/TestApi","ConnectionId":"0HMN925I9RJQ4"}}
-

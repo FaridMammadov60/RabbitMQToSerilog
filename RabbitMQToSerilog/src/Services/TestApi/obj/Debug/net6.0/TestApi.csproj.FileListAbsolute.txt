@@ -67,3 +67,8 @@ C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\T
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.RabbitMQ.dll
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.RabbitMq.Client.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Enrichers.Environment.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Exceptions.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Exceptions.EntityFrameworkCore.dll

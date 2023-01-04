@@ -57,6 +57,18 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Serilog.Exceptions.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
             "Serilog.Extensions.Hosting": {
               "target": "Package",
               "version": "[5.0.1, )"
@@ -153,6 +165,18 @@
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Serilog.Exceptions.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.4.0, )"
             },
             "Serilog.Extensions.Hosting": {
               "target": "Package",
@@ -260,6 +284,18 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Serilog.Exceptions.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
             "Serilog.Extensions.Hosting": {
               "target": "Package",
               "version": "[5.0.1, )"
@@ -360,6 +396,18 @@
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Serilog.Exceptions.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.4.0, )"
             },
             "Serilog.Extensions.Hosting": {
               "target": "Package",

@@ -67,3 +67,8 @@ C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\H
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\HavaProqnozu\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\HavaProqnozu\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\HavaProqnozu\bin\Debug\net6.0\Serilog.Sinks.Http.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\HavaProqnozu\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\HavaProqnozu\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\HavaProqnozu\bin\Debug\net6.0\Serilog.Enrichers.Environment.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\HavaProqnozu\bin\Debug\net6.0\Serilog.Exceptions.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\HavaProqnozu\bin\Debug\net6.0\Serilog.Exceptions.EntityFrameworkCore.dll
