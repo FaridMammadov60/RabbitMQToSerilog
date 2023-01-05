@@ -1,5 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using RequestResponseMiddleware;
 using Serilog;
 using Serilog.Formatting.Json;
 using Serilog.Sinks.RabbitMQ;
@@ -44,8 +45,6 @@ loggerFactory.AddSerilog(Log.Logger);
 
 builder.Services.AddSingleton<ILoggerFactory>(loggerFactory);
 
-var logfile = File.CreateText(Path.Combine(Directory.GetCurrentDirectory(), "serilog.log"));
-Serilog.Debugging.SelfLog.Enable(TextWriter.Synchronized(logfile));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -80,6 +79,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.Use()
 
 app.UseAuthorization();
 
