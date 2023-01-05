@@ -1,0 +1,12 @@
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\bin\Debug\net6.0\SeriLogElasticSearch.deps.json
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\bin\Debug\net6.0\SeriLogElasticSearch.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\bin\Debug\net6.0\SeriLogElasticSearch.pdb
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\SeriLogElasticSearch.csproj.AssemblyReference.cache
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\SeriLogElasticSearch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\SeriLogElasticSearch.AssemblyInfoInputs.cache
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\SeriLogElasticSearch.AssemblyInfo.cs
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\SeriLogElasticSearch.csproj.CoreCompileInputs.cache
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\SeriLogElasticSearch.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\refint\SeriLogElasticSearch.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\SeriLogElasticSearch.pdb
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\BuildingBlocks\SeriLogElasticSearch\obj\Debug\net6.0\ref\SeriLogElasticSearch.dll

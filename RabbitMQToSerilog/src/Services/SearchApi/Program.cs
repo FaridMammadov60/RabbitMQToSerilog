@@ -15,8 +15,6 @@ using System;
 using Serilog.Exceptions;
 
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
@@ -25,32 +23,11 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
         builder.RegisterModule(new AutofacModule());
     });
 
-var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-var configuration = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-               .AddJsonFile(
-                   $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
-                   optional: true)
-               .Build();
-
-
 var logger = new LoggerConfiguration()
               .Enrich.FromLogContext()
               .Enrich.WithExceptionDetails()
-              .Enrich.WithMachineName()
-              .WriteTo.Debug()
-              .WriteTo.Console()
-              .WriteTo.File("logs.txt")
-              .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(configuration["Elasticsearch:Uri"]))
-              {
-                  CustomFormatter = new ExceptionAsObjectJsonFormatter(renderMessage: true),
-                  ModifyConnectionSettings = c => c.ServerCertificateValidationCallback(
-                      (o, certificate, arg3, arg4) => { return true; }),
-                  AutoRegisterTemplate = true,
-                  IndexFormat = $"{Assembly.GetExecutingAssembly().GetName().Name.ToLower().Replace(".", "-")}-{environment?.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyy-MM}"
-              })
-              .Enrich.WithProperty("Environment", environment)
-              .ReadFrom.Configuration(configuration)
+              .Enrich.WithMachineName()             
+              .WriteTo.File("logs.txt") 
               .CreateLogger();
 
 builder.Logging.AddSerilog(logger);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Text.Json;
 using TestApi.IntegrationEvents.Events;
 
@@ -21,11 +22,11 @@ namespace TestApi.Controllers
         [HttpPost]
         public async Task<IActionResult> TestPost()
         {
-            string data1 = "Test";
-            string data2 = "Test";
+            string data1 = "Testttttttttttttttttttttttt";
+            string data2 = "Testttttttttttttttttttttttt";
             string json = JsonSerializer.Serialize(new { Data = data1, Test = data2 }, (JsonSerializerOptions)null);
 
-            
+            //Log.Logger.Information(json);
             _logger.LogWarning(json);
 
 

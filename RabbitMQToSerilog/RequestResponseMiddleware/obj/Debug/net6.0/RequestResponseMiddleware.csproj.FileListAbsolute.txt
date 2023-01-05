@@ -1,0 +1,12 @@
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\bin\Debug\net6.0\RequestResponseMiddleware.deps.json
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\bin\Debug\net6.0\RequestResponseMiddleware.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\bin\Debug\net6.0\RequestResponseMiddleware.pdb
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\RequestResponseMiddleware.csproj.AssemblyReference.cache
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\RequestResponseMiddleware.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\RequestResponseMiddleware.AssemblyInfoInputs.cache
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\RequestResponseMiddleware.AssemblyInfo.cs
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\RequestResponseMiddleware.csproj.CoreCompileInputs.cache
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\RequestResponseMiddleware.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\refint\RequestResponseMiddleware.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\RequestResponseMiddleware.pdb
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\RequestResponseMiddleware\obj\Debug\net6.0\ref\RequestResponseMiddleware.dll
