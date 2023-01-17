@@ -128,3 +128,7 @@ C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\W
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\WebApplication 4.6\bin\Serilog.Formatting.Compact.xml
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\WebApplication 4.6\bin\SerilogWeb.Classic.dll
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\WebApplication 4.6\bin\SerilogWeb.Classic.xml
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\WebApplication 4.6\bin\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\WebApplication 4.6\bin\Serilog.Sinks.Seq.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\WebApplication 4.6\bin\Serilog.Sinks.PeriodicBatching.xml
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\WebApplication 4.6\bin\Serilog.Sinks.Seq.xml

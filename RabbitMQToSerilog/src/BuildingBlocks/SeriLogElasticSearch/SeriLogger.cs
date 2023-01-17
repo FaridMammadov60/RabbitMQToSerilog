@@ -1,13 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Elasticsearch.Net;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
-using Elasticsearch.Net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeriLogElasticSearch
 {
@@ -27,16 +22,16 @@ namespace SeriLogElasticSearch
             .WriteTo.Elasticsearch(
                 new ElasticsearchSinkOptions(new Uri(elasticUri))
                 {
-                    ModifyConnectionSettings = x =>x.BasicAuthentication(elasticUser, elasticPassword)
+                    ModifyConnectionSettings = x => x.BasicAuthentication(elasticUser, elasticPassword)
                     .ServerCertificateValidationCallback((o, certificate, chain, errors) => true)
                     .ServerCertificateValidationCallback(CertificateValidations.AllowAll),
-                    IndexFormat = $"applogs-{context.HostingEnvironment.ApplicationName?.ToLower().Replace(".","-")}-{context.HostingEnvironment.EnvironmentName?.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyy-MM-dd}",
+                    IndexFormat = $"applogs-{context.HostingEnvironment.ApplicationName?.ToLower().Replace(".", "-")}-{context.HostingEnvironment.EnvironmentName?.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyy-MM-dd}",
                     TypeName = null,
-                    AutoRegisterTemplate= true,
-                    NumberOfShards= 2,
-                    NumberOfReplicas= 1,
+                    AutoRegisterTemplate = true,
+                    NumberOfShards = 2,
+                    NumberOfReplicas = 1,
                     EmitEventFailure = EmitEventFailureHandling.WriteToSelfLog,
-                    MinimumLogEventLevel = Serilog.Events.LogEventLevel.Information
+                    MinimumLogEventLevel = Serilog.Events.LogEventLevel.Warning
 
                 })
             .Enrich.WithProperty("Environment", context.HostingEnvironment.EnvironmentName)

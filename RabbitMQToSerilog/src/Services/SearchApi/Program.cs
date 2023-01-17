@@ -7,11 +7,6 @@ using SearchApi.AutoFac;
 using SearchApi.IntegrationEvents.Event;
 using SearchApi.IntegrationEvents.EventHandlers;
 using Serilog;
-using Serilog.Formatting.Elasticsearch;
-using Serilog.Sinks.Elasticsearch;
-using System.Configuration;
-using System.Reflection;
-using System;
 using Serilog.Exceptions;
 
 
@@ -26,8 +21,9 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
 var logger = new LoggerConfiguration()
               .Enrich.FromLogContext()
               .Enrich.WithExceptionDetails()
-              .Enrich.WithMachineName()             
-              .WriteTo.File("logs.txt") 
+              .Enrich.WithMachineName()
+              .WriteTo.File("logs.txt")
+              .MinimumLevel.Warning()              
               .CreateLogger();
 
 builder.Logging.AddSerilog(logger);

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Serilog;
 using System.Text.Json;
 using TestApi.IntegrationEvents.Events;
 
@@ -38,7 +37,7 @@ namespace TestApi.Controllers
             return Ok(json);
         }
 
-        [HttpPost("post2")]
+        [HttpPost("TestPost2")]
         public async Task<IActionResult> TestPost2(string json)
         {
             _logger.LogInformation(json);
@@ -53,7 +52,7 @@ namespace TestApi.Controllers
             return Ok("Alindi");
         }
 
-      
+
 
 
 

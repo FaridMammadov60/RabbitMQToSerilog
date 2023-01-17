@@ -2,9 +2,6 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using RequestResponseMiddleware;
 using Serilog;
-using Serilog.Formatting.Json;
-using Serilog.Sinks.RabbitMQ;
-using System.Configuration;
 using TestApi.AutoFac;
 
 var builder = WebApplication.CreateBuilder(args);

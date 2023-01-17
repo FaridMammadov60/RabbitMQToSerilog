@@ -1,10 +1,8 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
-using EventBus.Base;
-using EventBus.Factory;
 using HavaProqnozu.AutoFac;
-using Serilog.Formatting.Json;
 using Serilog;
+using Serilog.Formatting.Json;
 using ILogger = Serilog.ILogger;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +24,7 @@ builder.Services.AddHttpContextAccessor();
 ILogger log = new LoggerConfiguration()
                .Enrich.FromLogContext()
          .WriteTo.Http(requestUri: "http://localhost:5181/api/testApi", queueLimitBytes: null,
-          textFormatter: new JsonFormatter())      
+          textFormatter: new JsonFormatter())
 
          .MinimumLevel.Information()
          .CreateLogger();

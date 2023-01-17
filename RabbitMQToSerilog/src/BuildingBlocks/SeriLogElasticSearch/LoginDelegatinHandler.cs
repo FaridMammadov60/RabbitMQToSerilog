@@ -1,14 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeriLogElasticSearch
 {
-    public class LoginDelegatinHandler: DelegatingHandler
+    public class LoginDelegatinHandler : DelegatingHandler
     {
         private readonly ILogger<LoginDelegatinHandler> logger;
 
@@ -30,7 +25,7 @@ namespace SeriLogElasticSearch
                 }
                 else
                 {
-                    logger.LogWarning("Received a non-success status code {StatusCode} from {Url}",(int)response.StatusCode, response.RequestMessage.RequestUri);
+                    logger.LogWarning("Received a non-success status code {StatusCode} from {Url}", (int)response.StatusCode, response.RequestMessage.RequestUri);
                 }
                 return response;
             }
@@ -44,7 +39,7 @@ namespace SeriLogElasticSearch
 
                 return new HttpResponseMessage(System.Net.HttpStatusCode.BadGateway)
                 {
-                    RequestMessage= request,
+                    RequestMessage = request,
                 };
             }
         }

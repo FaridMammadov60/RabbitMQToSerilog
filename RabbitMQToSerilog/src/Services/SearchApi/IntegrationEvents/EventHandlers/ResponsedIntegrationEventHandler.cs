@@ -37,7 +37,7 @@ namespace SearchApi.IntegrationEvents.EventHandlers
                 case "Error":
                     _logger.LogError(@event.JsonData);
                     break;
-            }            
+            }
 
             return Task.CompletedTask;
         }
