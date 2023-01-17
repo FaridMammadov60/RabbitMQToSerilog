@@ -3,6 +3,9 @@ using Autofac.Extensions.DependencyInjection;
 using EventBus.Base;
 using EventBus.Factory;
 using HavaProqnozu.AutoFac;
+using Serilog.Formatting.Json;
+using Serilog;
+using ILogger = Serilog.ILogger;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,22 +22,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped(sp =>
-{
-    EventBusConfig config = new EventBusConfig
-    {
-        ConnectionRetryCount = 5,
-        EventNameSuffix = "IntegrationEvent",
-        SubscriberClientAppName = "HavaedProqnozu",
-        EventBusType = EventBusType.RabbitMQ,
-        //Connection = new ConnectionFactory()
-        //{
-        //    HostName = "rabbitmq"
-        //}
-    };
 
-    return EventBusFactory.Create(config, sp);
-});
+ILogger log = new LoggerConfiguration()
+               .Enrich.FromLogContext()
+         .WriteTo.Http(requestUri: "http://localhost:5181/api/testApi", queueLimitBytes: null,
+          textFormatter: new JsonFormatter())      
+
+         .MinimumLevel.Information()
+         .CreateLogger();
+
+//log.Information("sdsdsdsdds");
 
 var app = builder.Build();
 

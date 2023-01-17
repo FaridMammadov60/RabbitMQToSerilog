@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FbyOGWsTsaMt6WM+qJ1seq2Cd6hFgU939uDBpikCbxlO+l3X/rXjrGMKneGQWecRMpy7PUTMkDsvgeuN8038xA==",
+  "dgSpecHash": "HFIaA17b7H9pA3IScrLmoHXsy3dNX1AJRbtcC++AEb4LkJNyD6tuV0UBBbfwm6eOv9hGHIlIa0Fr6NAX3wkZNw==",
   "success": true,
   "projectFilePath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.RabbitMQ\\EventBus.RabbitMQ.csproj",
   "expectedPackageFiles": [

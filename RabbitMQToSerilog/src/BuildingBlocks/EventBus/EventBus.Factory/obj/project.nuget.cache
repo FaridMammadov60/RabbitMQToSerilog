@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PScsYN0wVZrgXgu6/YnWVP3kt3PPrDP+DI41ZaTrT+keeHy6KOxrUhCPJ/fZfhQIz4DQcWvKNQcGMISk/Gg2mg==",
+  "dgSpecHash": "T5o55BD7DPijIa4VNppT5PShKjXo+sh3e8zk4DnbCmGjxzNEStJZex8UFR++RwuXaAqh5nPOR9Be52AUsy+Nwg==",
   "success": true,
   "projectFilePath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\EventBus\\EventBus.Factory\\EventBus.Factory.csproj",
   "expectedPackageFiles": [

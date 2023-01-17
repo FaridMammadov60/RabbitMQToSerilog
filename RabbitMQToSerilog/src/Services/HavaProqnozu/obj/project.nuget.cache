@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cQqDcqmUfyoKwL9xPyse8wbu78LGrZ7dO94/J7YRQM3ICBZB/m/KM13luuaQAX0RqHvwTMxy1rOwdEeBgV5FRg==",
+  "dgSpecHash": "Fv4owsZVi2TzjCGVuqnhhKVjW4/8eqKqrG+IRq/rlOmyLMCIX6Dcf8qDZUtXVkslHYHWvyKOEWJyGHZy+KI7+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\Services\\HavaProqnozu\\HavaProqnozu.csproj",
   "expectedPackageFiles": [

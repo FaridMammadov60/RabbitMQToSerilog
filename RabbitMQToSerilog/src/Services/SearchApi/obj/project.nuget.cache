@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XZvfBSrIDrPn1niN6/o907Qm+Y3gjja9gbcX6BdoSg6EiuaGzD9I9xyhkJ/fcNrmjZQgcgVpKm+nvYeoEASllA==",
+  "dgSpecHash": "h+KG/maxKt26afmCbt3mqGCAMSD7zr998zrDLgsMkQAqa0BoBn4MRgYaEkbrhRkVUHHF37MntK0uGqlYBhtv4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\Services\\SearchApi\\SearchApi.csproj",
   "expectedPackageFiles": [

@@ -1,0 +1,597 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Serilog.Sinks.Http</name>
+    </assembly>
+    <members>
+        <member name="T:Serilog.LoggerSinkConfigurationExtensions">
+            <summary>
+            Class containing extension methods to <see cref="T:Serilog.LoggerConfiguration"/>, configuring sinks
+            sending log events over the network using HTTP.
+            </summary>
+        </member>
+        <member name="M:Serilog.LoggerSinkConfigurationExtensions.Http(Serilog.Configuration.LoggerSinkConfiguration,System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Nullable{System.Int32},System.Nullable{System.Int64},System.Nullable{System.TimeSpan},Serilog.Formatting.ITextFormatter,Serilog.Sinks.Http.IBatchFormatter,Serilog.Events.LogEventLevel,Serilog.Sinks.Http.IHttpClient,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds a non-durable sink that sends log events using HTTP POST over the network. The log
+            events are stored in memory in the case that the log server cannot be reached.
+            <para/>
+            The maximum number of log events stored in memory is configurable, and given that we
+            reach this limit the sink will drop new log events in favor of keeping the old.
+            <para/>
+            A non-durable sink will lose data after a system or process restart.
+            </summary>
+            <param name="sinkConfiguration">The logger configuration.</param>
+            <param name="requestUri">The URI the request is sent to.</param>
+            <param name="queueLimitBytes">
+            The maximum size, in bytes, of events stored in memory, waiting to be sent over the
+            network. Specify null for no limit.
+            </param>
+            <param name="logEventLimitBytes">
+            The maximum size, in bytes, for a serialized representation of a log event. Log events
+            exceeding this size will be dropped. Specify null for no limit. Default value is null.
+            </param>
+            <param name="logEventsInBatchLimit">
+            The maximum number of log events sent as a single batch over the network. Default
+            value is 1000.
+            </param>
+            <param name="batchSizeLimitBytes">
+            The approximate maximum size, in bytes, for a single batch. The value is an
+            approximation because only the size of the log events are considered. The extra
+            characters added by the batch formatter, where the sequence of serialized log events
+            are transformed into a payload, are not considered. Please make sure to accommodate for
+            those.
+            <para/>
+            Another thing to mention is that although the sink does its best to optimize for this
+            limit, if you decide to use an implementation of <seealso cref="T:Serilog.Sinks.Http.IHttpClient"/> that is
+            compressing the payload, e.g. <seealso cref="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient"/>, this parameter
+            describes the uncompressed size of the log events. The compressed size might be
+            significantly smaller depending on the compression algorithm and the repetitiveness of
+            the log events.
+            <para/>
+            Default value is null.
+            </param>
+            <param name="period">
+            The time to wait between checking for event batches. Default value is 2 seconds.
+            </param>
+            <param name="textFormatter">
+            The formatter rendering individual log events into text, for example JSON. Default
+            value is <see cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter"/>.
+            </param>
+            <param name="batchFormatter">
+            The formatter batching multiple log events into a payload that can be sent over the
+            network. Default value is <see cref="T:Serilog.Sinks.Http.BatchFormatters.ArrayBatchFormatter"/>.
+            </param>
+            <param name="restrictedToMinimumLevel">
+            The minimum level for events passed through the sink. Default value is
+            <see cref="F:Serilog.Events.LevelAlias.Minimum"/>.
+            </param>
+            <param name="httpClient">
+            A custom <see cref="T:Serilog.Sinks.Http.IHttpClient"/> implementation. Default value is
+            <see cref="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient"/>.
+            </param>
+            <param name="configuration">
+            Configuration passed to <paramref name="httpClient"/>. Parameter is either manually
+            specified when configuring the sink in source code or automatically passed in when
+            configuring the sink using
+            <see href="https://www.nuget.org/packages/Serilog.Settings.Configuration">Serilog.Settings.Configuration</see>.
+            </param>
+            <returns>Logger configuration, allowing configuration to continue.</returns>
+        </member>
+        <member name="M:Serilog.LoggerSinkConfigurationExtensions.DurableHttpUsingFileSizeRolledBuffers(Serilog.Configuration.LoggerSinkConfiguration,System.String,System.String,System.Nullable{System.Int64},System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Int64},System.Nullable{System.Int32},System.Nullable{System.Int64},System.Nullable{System.TimeSpan},Serilog.Formatting.ITextFormatter,Serilog.Sinks.Http.IBatchFormatter,Serilog.Events.LogEventLevel,Serilog.Sinks.Http.IHttpClient,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds a durable sink that sends log events using HTTP POST over the network. The log
+            events are always stored on disk in the case that the log server cannot be reached.
+            <para/>
+            The buffer files will use a rolling behavior defined by the file size specified in
+            <paramref name="bufferFileSizeLimitBytes"/>, i.e. a new buffer file is created when the
+            current buffer file has reached its limit. The maximum number of retained files is
+            defined by <paramref name="retainedBufferFileCountLimit"/>, and when that limit is
+            reached the oldest file is dropped to make room for a new.
+            <para/>
+            A durable sink will protect you against data loss after a system or process restart.
+            </summary>
+            <param name="sinkConfiguration">The logger configuration.</param>
+            <param name="requestUri">The URI the request is sent to.</param>
+            <param name="bufferBaseFileName">
+            The relative or absolute path for a set of files that will be used to buffer events
+            until they can be successfully transmitted across the network. Individual files will be
+            created using the pattern "<paramref name="bufferBaseFileName"/>-*.txt", which should
+            not clash with any other file names in the same directory. Default value is "Buffer".
+            </param>
+            <param name="bufferFileSizeLimitBytes">
+            The approximate maximum size, in bytes, to which a buffer file will be allowed to grow.
+            For unrestricted growth, pass null. The default is 1 GB. To avoid writing partial
+            events, the last event within the limit will be written in full even if it exceeds the
+            limit.
+            </param>
+            <param name="bufferFileShared">
+            Allow the buffer file to be shared by multiple processes. Default value is false.
+            </param>
+            <param name="retainedBufferFileCountLimit">
+            The maximum number of buffer files that will be retained, including the current buffer
+            file. Under normal operation only 2 files will be kept, however if the log server is
+            unreachable, the number of files specified by
+            <paramref name="retainedBufferFileCountLimit"/> will be kept on the file system. For
+            unlimited retention, pass null. Default value is 31.
+            </param>
+            <param name="logEventLimitBytes">
+            The maximum size, in bytes, for a serialized representation of a log event. Log events
+            exceeding this size will be dropped. Specify null for no limit. Default value is null.
+            </param>
+            <param name="logEventsInBatchLimit">
+            The maximum number of log events sent as a single batch over the network. Default
+            value is 1000.
+            </param>
+            <param name="batchSizeLimitBytes">
+            The approximate maximum size, in bytes, for a single batch. The value is an
+            approximation because only the size of the log events are considered. The extra
+            characters added by the batch formatter, where the sequence of serialized log events
+            are transformed into a payload, are not considered. Please make sure to accommodate for
+            those.
+            <para/>
+            Another thing to mention is that although the sink does its best to optimize for this
+            limit, if you decide to use an implementation of <seealso cref="T:Serilog.Sinks.Http.IHttpClient"/> that is
+            compressing the payload, e.g. <seealso cref="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient"/>, this parameter
+            describes the uncompressed size of the log events. The compressed size might be
+            significantly smaller depending on the compression algorithm and the repetitiveness of
+            the log events.
+            <para/>
+            Default value is null.
+            </param>
+            <param name="period">
+            The time to wait between checking for event batches. Default value is 2 seconds.
+            </param>
+            <param name="textFormatter">
+            The formatter rendering individual log events into text, for example JSON. Default
+            value is <see cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter"/>.
+            </param>
+            <param name="batchFormatter">
+            The formatter batching multiple log events into a payload that can be sent over the
+            network. Default value is <see cref="T:Serilog.Sinks.Http.BatchFormatters.ArrayBatchFormatter"/>.
+            </param>
+            <param name="restrictedToMinimumLevel">
+            The minimum level for events passed through the sink. Default value is
+            <see cref="F:Serilog.Events.LevelAlias.Minimum"/>.
+            </param>
+            <param name="httpClient">
+            A custom <see cref="T:Serilog.Sinks.Http.IHttpClient"/> implementation. Default value is
+            <see cref="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient"/>.
+            </param>
+            <param name="configuration">
+            Configuration passed to <paramref name="httpClient"/>. Parameter is either manually
+            specified when configuring the sink in source code or automatically passed in when
+            configuring the sink using
+            <see href="https://www.nuget.org/packages/Serilog.Settings.Configuration">Serilog.Settings.Configuration</see>.
+            </param>
+            <returns>Logger configuration, allowing configuration to continue.</returns>
+        </member>
+        <member name="M:Serilog.LoggerSinkConfigurationExtensions.DurableHttpUsingTimeRolledBuffers(Serilog.Configuration.LoggerSinkConfiguration,System.String,System.String,Serilog.Sinks.Http.BufferRollingInterval,System.Nullable{System.Int64},System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Int64},System.Nullable{System.Int32},System.Nullable{System.Int64},System.Nullable{System.TimeSpan},Serilog.Formatting.ITextFormatter,Serilog.Sinks.Http.IBatchFormatter,Serilog.Events.LogEventLevel,Serilog.Sinks.Http.IHttpClient,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds a durable sink that sends log events using HTTP POST over the network. The log
+            events are always stored on disk in the case that the log server cannot be reached.
+            <para/>
+            The buffer files will use a rolling behavior defined by the time interval specified in
+            <paramref name="bufferRollingInterval"/>, i.e. a new buffer file is created every time
+            a new interval is started. The maximum size of a buffer file is defined by
+            <paramref name="bufferFileSizeLimitBytes"/>, and when that limit is reached all new log
+            events will be dropped until a new interval is started.
+            <para/>
+            A durable sink will protect you against data loss after a system or process restart.
+            </summary>
+            <param name="sinkConfiguration">The logger configuration.</param>
+            <param name="requestUri">The URI the request is sent to.</param>
+            <param name="bufferBaseFileName">
+            The relative or absolute path for a set of files that will be used to buffer events
+            until they can be successfully transmitted across the network. Individual files will be
+            created using the pattern "<paramref name="bufferBaseFileName"/>-*.txt", which should
+            not clash with any other file names in the same directory. Default value is "Buffer".
+            </param>
+            <param name="bufferRollingInterval">
+            The interval at which the buffer files are rotated. Default value is Day.
+            </param>
+            <param name="bufferFileSizeLimitBytes">
+            The approximate maximum size, in bytes, to which a buffer file for a specific time
+            interval will be allowed to grow. By default no limit will be applied.
+            </param>
+            <param name="bufferFileShared">
+            Allow the buffer file to be shared by multiple processes. Default value is false.
+            </param>
+            <param name="retainedBufferFileCountLimit">
+            The maximum number of buffer files that will be retained, including the current buffer
+            file. Under normal operation only 2 files will be kept, however if the log server is
+            unreachable, the number of files specified by
+            <paramref name="retainedBufferFileCountLimit"/> will be kept on the file system. For
+            unlimited retention, pass null. Default value is 31.
+            </param>
+            <param name="logEventLimitBytes">
+            The maximum size, in bytes, for a serialized representation of a log event. Log events
+            exceeding this size will be dropped. Specify null for no limit. Default value is null.
+            </param>
+            <param name="logEventsInBatchLimit">
+            The maximum number of log events sent as a single batch over the network. Default
+            value is 1000.
+            </param>
+            <param name="batchSizeLimitBytes">
+            The approximate maximum size, in bytes, for a single batch. The value is an
+            approximation because only the size of the log events are considered. The extra
+            characters added by the batch formatter, where the sequence of serialized log events
+            are transformed into a payload, are not considered. Please make sure to accommodate for
+            those.
+            <para/>
+            Another thing to mention is that although the sink does its best to optimize for this
+            limit, if you decide to use an implementation of <seealso cref="T:Serilog.Sinks.Http.IHttpClient"/> that is
+            compressing the payload, e.g. <seealso cref="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient"/>, this parameter
+            describes the uncompressed size of the log events. The compressed size might be
+            significantly smaller depending on the compression algorithm and the repetitiveness of
+            the log events.
+            <para/>
+            Default value is null.
+            </param>
+            <param name="period">
+            The time to wait between checking for event batches. Default value is 2 seconds.
+            </param>
+            <param name="textFormatter">
+            The formatter rendering individual log events into text, for example JSON. Default
+            value is <see cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter"/>.
+            </param>
+            <param name="batchFormatter">
+            The formatter batching multiple log events into a payload that can be sent over the
+            network. Default value is <see cref="T:Serilog.Sinks.Http.BatchFormatters.ArrayBatchFormatter"/>.
+            </param>
+            <param name="restrictedToMinimumLevel">
+            The minimum level for events passed through the sink. Default value is
+            <see cref="F:Serilog.Events.LevelAlias.Minimum"/>.
+            </param>
+            <param name="httpClient">
+            A custom <see cref="T:Serilog.Sinks.Http.IHttpClient"/> implementation. Default value is
+            <see cref="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient"/>.
+            </param>
+            <param name="configuration">
+            Configuration passed to <paramref name="httpClient"/>. Parameter is either manually
+            specified when configuring the sink in source code or automatically passed in when
+            configuring the sink using
+            <see href="https://www.nuget.org/packages/Serilog.Settings.Configuration">Serilog.Settings.Configuration</see>.
+            </param>
+            <returns>Logger configuration, allowing configuration to continue.</returns>
+        </member>
+        <member name="T:Serilog.Sinks.Http.BatchFormatters.ArrayBatchFormatter">
+            <summary>
+            Formatter serializing batches of log events into a JSON array.
+            <para/>
+            Example:
+            [
+              { event n },
+              { event n+1 }
+            ]
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.BatchFormatters.ArrayBatchFormatter.Format(System.Collections.Generic.IEnumerable{System.String},System.IO.TextWriter)">
+            <inheritdoc />
+        </member>
+        <member name="T:Serilog.Sinks.Http.BufferRollingInterval">
+            <summary>
+            Specifies the frequency at which the buffer files should roll.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.BufferRollingInterval.Year">
+            <summary>
+            Buffer files roll every year.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.BufferRollingInterval.Month">
+            <summary>
+            Buffer files roll every month.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.BufferRollingInterval.Day">
+            <summary>
+            Buffer files roll every day.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.BufferRollingInterval.Hour">
+            <summary>
+            Buffer files roll every hour.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.BufferRollingInterval.Minute">
+            <summary>
+            Buffer files roll every minute.
+            </summary>
+        </member>
+        <member name="T:Serilog.Sinks.Http.ByteSize">
+            <summary>
+            Class defining various multipliers of the unit byte.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.ByteSize.B">
+            <summary>
+            Value representing one byte (B).
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.ByteSize.KB">
+            <summary>
+            Value representing 1 kilobyte (KB), or kibibyte (KiB) as the unit sometimes is called.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.ByteSize.MB">
+            <summary>
+            Value representing 1 megabyte (MB), or mebibyte (MiB) as the unit sometimes is called.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.ByteSize.GB">
+            <summary>
+            Value representing 1 gigabyte (GB), or gibibyte (GiB) as the unit sometimes is called.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.ByteSize.From(System.String)">
+            <summary>
+            Returns the number of bytes produced by UTF8 encoding the characters in the specified
+            string.
+            </summary>
+            <param name="text">The string containing the set of characters to encode.</param>
+            <returns>The number of bytes produced by encoding the specified characters.</returns>
+        </member>
+        <member name="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient">
+            <summary>
+            HTTP client sending Gzip encoded JSON over the network.
+            </summary>
+            <remarks>
+            This sink will, in comparison to <seealso cref="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient"/>, send smaller requests
+            over the network at the expense of increased CPU and memory utilization.
+            </remarks>
+            <seealso cref="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient"/>
+            <seealso cref="T:Serilog.Sinks.Http.IHttpClient"/>
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient"/> class with
+            fastest compression level.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient.#ctor(System.IO.Compression.CompressionLevel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient"/> class with
+            specified compression level.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient.#ctor(System.Net.Http.HttpClient,System.IO.Compression.CompressionLevel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient"/> class with
+            specified HTTP client and compression level.
+            </summary>
+        </member>
+        <member name="P:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient.CompressionLevel">
+            <summary>
+            Gets or sets the compression level.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient.Configure(Microsoft.Extensions.Configuration.IConfiguration)">
+            <inheritdoc />
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient.PostAsync(System.String,System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient">
+            <summary>
+            HTTP client sending JSON over the network.
+            </summary>
+            <seealso cref="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient"/>
+            <seealso cref="T:Serilog.Sinks.Http.IHttpClient"/>
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonHttpClient.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient"/> class.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonHttpClient.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient"/> class with
+            specified HTTP client.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonHttpClient.Configure(Microsoft.Extensions.Configuration.IConfiguration)">
+            <inheritdoc />
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonHttpClient.PostAsync(System.String,System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Serilog.Sinks.Http.HttpClients.JsonHttpClient.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Serilog.Sinks.Http.IBatchFormatter">
+            <summary>
+            Formats batches of log events into payloads that can be sent over the network.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.IBatchFormatter.Format(System.Collections.Generic.IEnumerable{System.String},System.IO.TextWriter)">
+            <summary>
+            Format the log events into a payload.
+            </summary>
+            <param name="logEvents">
+            The events to format.
+            </param>
+            <param name="output">
+            The payload to send over the network.
+            </param>
+        </member>
+        <member name="T:Serilog.Sinks.Http.IHttpClient">
+            <summary>
+            Interface responsible for posting HTTP requests.
+            </summary>
+            <seealso cref="T:Serilog.Sinks.Http.HttpClients.JsonHttpClient"/>
+            <seealso cref="T:Serilog.Sinks.Http.HttpClients.JsonGzipHttpClient"/>
+        </member>
+        <member name="M:Serilog.Sinks.Http.IHttpClient.Configure(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configures the HTTP client.
+            </summary>
+            <param name="configuration">The application configuration properties.</param>
+        </member>
+        <member name="M:Serilog.Sinks.Http.IHttpClient.PostAsync(System.String,System.IO.Stream)">
+            <summary>
+            Sends a POST request to the specified Uri as an asynchronous operation.
+            </summary>
+            <param name="requestUri">The Uri the request is sent to.</param>
+            <param name="contentStream">The stream containing the content of the request.</param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Serilog.Sinks.Http.Private.IO.DirectoryService.GetFiles(System.String,System.String)">
+            <summary>
+            Returns the names of files (including their paths) that match the specified search
+            pattern in the specified directory.
+            </summary>
+            <param name="path">
+            The relative or absolute path to the directory to search. This string is not
+            case-sensitive.
+            </param>
+            <param name="searchPattern">
+            The search string to match against the names of files in <paramref name="path" />. This
+            parameter can contain a combination of valid literal path and wildcard (* and ?)
+            characters, but doesn't support regular expressions.
+            </param>
+            <returns>
+            An array of the full names (including paths) for the files in the specified directory
+            that match the specified search pattern, or an empty array if no files are found.
+            </returns>
+        </member>
+        <member name="F:Serilog.Sinks.Http.Private.Time.ExponentialBackoffConnectionSchedule.MinimumBackoffPeriod">
+            <summary>
+            The minimum backoff period.
+            </summary>
+        </member>
+        <member name="F:Serilog.Sinks.Http.Private.Time.ExponentialBackoffConnectionSchedule.MaximumBackoffInterval">
+            <summary>
+            The maximum, i.e. capped, backoff period.
+            </summary>
+        </member>
+        <member name="T:Serilog.Sinks.Http.TextFormatters.CompactRenderedTextFormatter">
+            <summary>
+            JSON formatter serializing log events with minimizing size as a priority but still render
+            the message template into a message. This formatter greatly reduce the network load and
+            should be used in situations where bandwidth is of importance.
+            </summary>
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NormalTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.CompactTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter" />
+            <seealso cref="T:Serilog.Formatting.ITextFormatter" />
+        </member>
+        <member name="M:Serilog.Sinks.Http.TextFormatters.CompactRenderedTextFormatter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.Http.TextFormatters.CompactRenderedTextFormatter"/> class.
+            </summary>
+        </member>
+        <member name="T:Serilog.Sinks.Http.TextFormatters.CompactTextFormatter">
+            <summary>
+            JSON formatter serializing log events with minimizing size as a priority and normalizing
+            its data. The lack of a rendered message means even smaller network load compared to
+            <see cref="T:Serilog.Sinks.Http.TextFormatters.CompactRenderedTextFormatter"/> and should be used in situations where bandwidth
+            is of importance. Often this formatter is complemented with a log server that is capable of
+            rendering the messages of the incoming log events.
+            </summary>
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NormalTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.CompactRenderedTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter" />
+            <seealso cref="T:Serilog.Formatting.ITextFormatter" />
+        </member>
+        <member name="P:Serilog.Sinks.Http.TextFormatters.CompactTextFormatter.IsRenderingMessage">
+            <summary>
+            Gets or sets a value indicating whether the message is rendered into JSON.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.TextFormatters.CompactTextFormatter.Format(Serilog.Events.LogEvent,System.IO.TextWriter)">
+            <summary>
+            Format the log event into the output.
+            </summary>
+            <param name="logEvent">The event to format.</param>
+            <param name="output">The output.</param>
+        </member>
+        <member name="T:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter">
+            <summary>
+            JSON formatter serializing log events into a format where the message properties are placed
+            into their own namespace. It is designed for a micro-service architecture where one wish to
+            reduce the risk of having multiple services sending log events with identical property
+            names but different value types, something that is unsupported by the Elastic Stack.
+            </summary>
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NormalTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.CompactTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.CompactRenderedTextFormatter" />
+            <seealso cref="T:Serilog.Formatting.ITextFormatter" />
+        </member>
+        <member name="M:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter"/> class.
+            </summary>
+            <param name="component">
+            The component name, which will be serialized into a sub-property of "Properties" in the
+            JSON document.
+            </param>
+            <param name="subComponent">
+            The sub-component name, which will be serialized into a sub-property of
+            <paramref name="component"/> in the JSON document. If value is null it will be omitted
+            from the serialized JSON document, and the message properties will be serialized as
+            properties of <paramref name="component"/>. Default value is null.
+            </param>
+        </member>
+        <member name="P:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter.IsRenderingMessage">
+            <summary>
+            Gets or sets a value indicating whether the message is rendered into JSON. Default
+            value is true.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter.Format(Serilog.Events.LogEvent,System.IO.TextWriter)">
+            <summary>
+            Format the log event into the output.
+            </summary>
+            <param name="logEvent">The event to format.</param>
+            <param name="output">The output.</param>
+        </member>
+        <member name="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter">
+            <summary>
+            JSON formatter serializing log events into a normal format with the message template
+            rendered into a message. This is the most verbose formatter and its network load is higher
+            than the other formatters.
+            </summary>
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NormalTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.CompactTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.CompactRenderedTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter" />
+            <seealso cref="T:Serilog.Formatting.ITextFormatter" />
+        </member>
+        <member name="M:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter"/> class.
+            </summary>
+        </member>
+        <member name="T:Serilog.Sinks.Http.TextFormatters.NormalTextFormatter">
+            <summary>
+            JSON formatter serializing log events into a normal format with its data normalized. The
+            lack of a rendered message means improved network load compared to
+            <see cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter"/>. Often this formatter is complemented with a log
+            server that is capable of rendering the messages of the incoming log events.
+            </summary>
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NormalRenderedTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.CompactTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.CompactRenderedTextFormatter" />
+            <seealso cref="T:Serilog.Sinks.Http.TextFormatters.NamespacedTextFormatter" />
+            <seealso cref="T:Serilog.Formatting.ITextFormatter" />
+        </member>
+        <member name="P:Serilog.Sinks.Http.TextFormatters.NormalTextFormatter.IsRenderingMessage">
+            <summary>
+            Gets or sets a value indicating whether the message is rendered into JSON.
+            </summary>
+        </member>
+        <member name="M:Serilog.Sinks.Http.TextFormatters.NormalTextFormatter.Format(Serilog.Events.LogEvent,System.IO.TextWriter)">
+            <summary>
+            Format the log event into the output.
+            </summary>
+            <param name="logEvent">The event to format.</param>
+            <param name="output">The output.</param>
+        </member>
+    </members>
+</doc>

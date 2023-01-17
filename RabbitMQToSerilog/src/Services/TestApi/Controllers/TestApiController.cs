@@ -11,17 +11,22 @@ namespace TestApi.Controllers
     {
         private readonly ILogger<ResponsedIntegrationEvent> _logger;
 
-
-
         public TestApiController(ILogger<ResponsedIntegrationEvent> logger)
         {
             _logger = logger;
         }
 
+        [HttpGet("Get2")]
+        public async Task<IActionResult> TestGet2()
+        {
+            _logger.LogInformation("oooooooley");
+            return Ok("Alindi");
+        }
 
         [HttpPost]
         public async Task<IActionResult> TestPost()
         {
+
             string data1 = "Testttttttttttttttttttttttt";
             string data2 = "Testttttttttttttttttttttttt";
             string json = JsonSerializer.Serialize(new { Data = data1, Test = data2 }, (JsonSerializerOptions)null);
@@ -32,6 +37,25 @@ namespace TestApi.Controllers
 
             return Ok(json);
         }
+
+        [HttpPost("post2")]
+        public async Task<IActionResult> TestPost2(string json)
+        {
+            _logger.LogInformation(json);
+            return Ok("Alindi");
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> TestGet(string json)
+        {
+            _logger.LogInformation(json);
+            return Ok("Alindi");
+        }
+
+      
+
+
 
     }
 }

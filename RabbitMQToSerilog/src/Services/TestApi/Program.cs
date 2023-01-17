@@ -52,22 +52,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
-//builder.Services.AddScoped(sp =>
-//{
-//    EventBusConfig config = new EventBusConfig
-//    {
-//        ConnectionRetryCount = 5,
-//        EventNameSuffix = "IntegrationEvent",
-//        SubscriberClientAppName = "TestApi",
-//        EventBusType = EventBusType.RabbitMQ,
-//        //Connection = new ConnectionFactory()
-//        //{
-//        //    HostName = "rabbitmq"
-//        //}
-//    };
 
-//    return EventBusFactory.Create(config, sp);
-//});
 
 var app = builder.Build();
 
@@ -79,7 +64,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.Use()
+app.UseMiddleware<RequestResponseMiddlewareLib>();
 
 app.UseAuthorization();
 

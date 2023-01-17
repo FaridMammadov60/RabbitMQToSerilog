@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+uQgAIBnQ+owy13N4aok6UbuoGpu1buTz7SyGswQYCDI26nuDBU1bUtOHpUkBT5sebkjECBa3iXAKfUjiLr6/w==",
+  "dgSpecHash": "eqisOdeyMpS2/yLW6P9ZHK2JTSPihvCYvkdfLZ4Q9ixXibBCfuJhNhwEPaRooodgeGFxP/Q86E2GKxPZWqKdQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\farid\\Desktop\\Rabbit\\RabbitMQToSerilog\\RabbitMQToSerilog\\src\\BuildingBlocks\\SeriLogElasticSearch\\SeriLogElasticSearch.csproj",
   "expectedPackageFiles": [

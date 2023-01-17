@@ -72,3 +72,10 @@ C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\T
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Enrichers.Environment.dll
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Exceptions.dll
 C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Exceptions.EntityFrameworkCore.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Elasticsearch.Net.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Formatting.Elasticsearch.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\Serilog.Sinks.Elasticsearch.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\RequestResponseMiddleware.dll
+C:\Users\farid\Desktop\Rabbit\RabbitMQToSerilog\RabbitMQToSerilog\src\Services\TestApi\bin\Debug\net6.0\RequestResponseMiddleware.pdb
