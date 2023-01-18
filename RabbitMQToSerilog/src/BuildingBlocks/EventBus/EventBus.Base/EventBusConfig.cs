@@ -1,4 +1,6 @@
-﻿namespace EventBus.Base
+﻿using Microsoft.Extensions.Configuration;
+
+namespace EventBus.Base
 {
     public class EventBusConfig
     {
@@ -14,6 +16,11 @@
         public bool DeleteEventPrefix => !String.IsNullOrEmpty(EventNamePrefix);
         public bool DeleteEventSuffix => !String.IsNullOrEmpty(EventNameSuffix);
 
+        public EventBusConfig ReadFrom(IConfiguration configuration)
+        {
+            EventBusConfig eventBus = configuration.GetSection("EventBusConfig").Get<EventBusConfig>();
+            return eventBus;
+        }
 
     }
 

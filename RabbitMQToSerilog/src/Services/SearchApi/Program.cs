@@ -18,23 +18,24 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
         builder.RegisterModule(new AutofacModule());
     });
 
-var logger = new LoggerConfiguration()
-              .Enrich.FromLogContext()
-              .Enrich.WithExceptionDetails()
-              .Enrich.WithMachineName()
-              .WriteTo.File("logs.txt")
-              .MinimumLevel.Warning()              
-              .CreateLogger();
-
-builder.Logging.AddSerilog(logger);
-
 //var logger = new LoggerConfiguration()
-//                .MinimumLevel.Warning()
-//                .WriteTo.File("logs.txt")
-//                .WriteTo.Elasticsearch()
-//                .CreateLogger();
+//              .Enrich.FromLogContext()
+//              .Enrich.WithExceptionDetails()
+//              .Enrich.WithMachineName()
+//              .WriteTo.Elasticsearch()
+//              .WriteTo.File("logs.txt")
+//              .MinimumLevel.Warning()              
+//              .CreateLogger();
+
 //builder.Logging.AddSerilog(logger);
-// Add services to the container.
+
+
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .CreateLogger();
+builder.Host.UseSerilog();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -48,21 +49,25 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<MedicalIntegrationEventHandler>();
 builder.Services.AddScoped<ResponsedIntegrationEventHandler>();
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped(sp =>
-{
-    EventBusConfig config = new EventBusConfig
-    {
-        ConnectionRetryCount = 5,
-        EventNameSuffix = "IntegrationEvent",
-        SubscriberClientAppName = "SearchApi",
-        EventBusType = EventBusType.RabbitMQ,
-        //Connection = new ConnectionFactory()
-        //{
-        //    HostName = "rabbitmq"
-        //}
-    };
+//builder.Services.AddScoped(sp =>
+//{
+//    EventBusConfig config = new EventBusConfig
+//    {
+//        ConnectionRetryCount = 5,
+//        EventNameSuffix = "IntegrationEvent",
+//        SubscriberClientAppName = "SearchApi",
+//        EventBusType = EventBusType.RabbitMQ,
+//        //Connection = new ConnectionFactory()
+//        //{
+//        //    HostName = "rabbitmq"
+//        //}
+//    };
 
-    return EventBusFactory.Create(config, sp);
+//    return EventBusFactory.Create(config, sp);
+//});
+
+builder.Services.AddScoped(sp => {
+    return EventBusFactory.Create(new EventBusConfig().ReadFrom(builder.Configuration), sp);
 });
 
 var app = builder.Build();
